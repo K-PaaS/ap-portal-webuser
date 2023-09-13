@@ -42,12 +42,12 @@ export class AppTopComponent implements OnInit {
   public regions: any = [];
   index: boolean;
   allMenuCursorIds: string[] = [
-    'cur_dashboard', 'cur_dashboard_app', 'cur_catalog', 'cur_paasta-doc',
+    'cur_dashboard', 'cur_dashboard_app', 'cur_catalog', 'cur_kpaas-doc',
     'cur_usermgmt', 'cur_org', 'cur_org2', 'cur_quantity', 'cur_login',
   ];
   public languageList: any;
   public curLang: any;
-  
+
 
   constructor(private translate: TranslateService, private common: CommonService,
               private router: Router, private logger: NGXLogger, private catalogservice: CatalogService, private sec: SecurityService) {
@@ -103,7 +103,7 @@ export class AppTopComponent implements OnInit {
       this.mySign = this.translateEntities.nav.myAccount;
       for (let i=0; i<appConfig['languageList'].length; i++) {
         this.languageList.set(appConfig['languageList'][i], this.switchLang(appConfig['languageList'][i]));
-      } 
+      }
       });
 
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -166,9 +166,9 @@ export class AppTopComponent implements OnInit {
         self.location.reload();
       }
       else self.name = '';
-    } 
+    }
   }
-  
+
 
   loginClick() {
     this.sec.doAuthorization();
@@ -291,12 +291,12 @@ export class AppTopComponent implements OnInit {
   }
 
   // get notifications(): String[] {
-  //   // TODO request get notification of PaaS-TA
+  //   // TODO request get notification of K-PaaS
 
   //   let notis = [
-  //     '파스타 공지사항-1-테스트1234',
-  //     '파스타 공지사항-2-테스트4567',
-  //     '파스타 공지사항-3-테스트8901'
+  //     '공지사항-1-테스트1234',
+  //     '공지사항-2-테스트4567',
+  //     '공지사항-3-테스트8901'
   //   ];
   //   return notis;
   // }

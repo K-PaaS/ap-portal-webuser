@@ -4,4 +4,4 @@ applications:
   instances: 1
   buildpacks:
     - nginx_buildpack
-  path: ./dist/paas-ta-portal-webuser
+  path: ./dist/ap-portal-webuser

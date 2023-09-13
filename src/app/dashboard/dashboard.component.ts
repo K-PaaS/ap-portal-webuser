@@ -1026,7 +1026,7 @@ export class DashboardComponent implements OnInit,  AfterViewChecked{
     return _used;
   }
 
-  getPaasTaRefresh(value: string){
+  getKPaaSRefresh(value: string){
     this.showLoading();
     this.getAppSummary(value);
     this.getOrgSummary();

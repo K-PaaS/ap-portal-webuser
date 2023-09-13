@@ -32,7 +32,7 @@ export class TopComponent implements OnInit {
   viewusage : string;
   translateEntities : any;
   allMenuCursorIds: string[] = [
-    'cur_dashboard', 'cur_dashboard_app', 'cur_catalog', 'cur_paasta-doc',
+    'cur_dashboard', 'cur_dashboard_app', 'cur_catalog', 'cur_kpaas-doc',
     'cur_usermgmt', 'cur_org', 'cur_org2', 'cur_quantity', 'cur_login',
   ];
 
@@ -159,12 +159,12 @@ export class TopComponent implements OnInit {
   }
 
   // get notifications(): String[] {
-  //   // TODO request get notification of PaaS-TA
+  //   // TODO request get notification of K-PaaS
 
   //   let notis = [
-  //     '파스타 공지사항-1-테스트1234',
-  //     '파스타 공지사항-2-테스트4567',
-  //     '파스타 공지사항-3-테스트8901'
+  //     '공지사항-1-테스트1234',
+  //     '공지사항-2-테스트4567',
+  //     '공지사항-3-테스트8901'
   //   ];
   //   return notis;
   // }
