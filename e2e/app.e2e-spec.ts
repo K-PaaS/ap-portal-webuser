@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('paas-ta-portal-webuser App', () => {
+describe('ap-portal-webuser App', () => {
   let page: AppPage;
 
   beforeEach(() => {

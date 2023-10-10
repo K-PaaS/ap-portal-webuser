@@ -2463,7 +2463,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
 
     popHtml.push("<html>");
     popHtml.push("    <head>");
-    popHtml.push("      <title>PaaS-TA</title>");
+    popHtml.push("      <title>K-PaaS</title>");
     popHtml.push("      <link rel='stylesheet' href='/assets/resources/css/logging-service.css' type='text/css'>");
     popHtml.push("    </head>");
     popHtml.push("    <body>");
@@ -2488,7 +2488,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
     popHtml.push("                        <label id='valid' style='display:none;'>" + this.translateEntities.logs.logging.invalidKeyword + "</label>");
     popHtml.push("                    </div>");
     popHtml.push("                    <div>");
-    if(appConfig["paastaType"] == "sidecar") {
+    if(appConfig["apType"] == "sidecar") {
       popHtml.push("                        <span style='color:#ff0000; font-weight: bold;'>" + this.translateEntities.logs.logging.explain + "</span>");
     }
     popHtml.push("                    </div>");
@@ -2505,7 +2505,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
         let logMsg = dbMsg;
         let msgObjToStr = JSON.stringify(dbMsg);
 
-        if(appConfig["paastaType"] == "sidecar") {
+        if(appConfig["apType"] == "sidecar") {
           if(msgObjToStr.indexOf('\\') != -1) {
             msgObjToStr = msgObjToStr.replace(/\\/g, "");
             logMsg = msgObjToStr.substring(1, msgObjToStr.length-1);
@@ -2547,7 +2547,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
     popHtml.push("        </div>");
     popHtml.push("        <div class='alertLayer' role='alert'>");
     popHtml.push("          <div class='in'>");
-    popHtml.push("            Alert! PaasTA Alert Example!<span class='alertClose'>x</span>");
+    popHtml.push("            Alert! K-PaaS Alert Example!<span class='alertClose'>x</span>");
     popHtml.push("          </div>");
     popHtml.push("        </div>");
     popHtml.push("    </body>");
@@ -2643,7 +2643,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
         // 시간 조정
         let now = new Date();
 
-        if(appConfig["paastaType"] == "sidecar") {
+        if(appConfig["apType"] == "sidecar") {
           startDateTime.setHours(startDateTime.getHours()-9);
           endDateTime.setHours(endDateTime.getHours()-9);
         } else {
@@ -2695,7 +2695,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
                     let logMsg = dbMsg;
                     let msgObjToStr = JSON.stringify(dbMsg);
 
-                    if(appConfig["paastaType"] == "sidecar") {
+                    if(appConfig["apType"] == "sidecar") {
                       if(msgObjToStr.indexOf('\\') != -1) {
                         msgObjToStr = msgObjToStr.replace(/\\/g, "");
                         logMsg = msgObjToStr.substring(1, msgObjToStr.length-1);
@@ -2749,7 +2749,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
 
   getCurrentDate(flag: string, purpose: string) {
     let today = new Date();
-    if(purpose == "request" && appConfig["paastaType"] == "sidecar") {
+    if(purpose == "request" && appConfig["apType"] == "sidecar") {
       today.setHours(today.getHours()-9);
     }
     let sDate = new Date(today);
@@ -2770,7 +2770,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
 
   getCurrentTime(flag: string, purpose: string) {
     let today = new Date();
-    if(purpose == "request" && appConfig["paastaType"] == "sidecar") {
+    if(purpose == "request" && appConfig["apType"] == "sidecar") {
       today.setHours(today.getHours()-9);
     }
     let sDate = new Date(today);
@@ -2782,7 +2782,7 @@ export class AppMainComponent implements OnInit, OnDestroy {
       sDate.setHours(sDate.getHours()-1);
       hh = ("00" + sDate.getHours().toString()).slice(-2);
       mm = ("00" + sDate.getMinutes().toString()).slice(-2);
-      if(purpose == "request" && appConfig["paastaType"] != "sidecar") {
+      if(purpose == "request" && appConfig["apType"] != "sidecar") {
         sDate.setSeconds(sDate.getSeconds()-1);
       }
       ss = ("00" + sDate.getSeconds().toString()).slice(-2);

@@ -6,7 +6,7 @@
   <ul class="gnb clearfix">
     <li *ngIf="isLogin" id="cur_dashboard" ><a [routerLink]="['/dashboard']">{{ 'common.top.main.linkTextDashboard' | translate }}</a></li>
     <li id="cur_catalog" ><a [routerLink]="['/catalog']" (click)="catalogInit()">{{ 'common.top.main.linkTextCatalog' | translate }}</a></li>
-    <li id="cur_paasta-doc"><a target="_blank" href="https://github.com/PaaS-TA/Guide-3.0-Penne-">{{ 'common.top.main.linkTextDocument' | translate }}</a></li>
+    <li id="cur_kpaas-doc"><a target="_blank" href="https://github.com/K-PaaS/Guide-3.0-Penne-">{{ 'common.top.main.linkTextDocument' | translate }}</a></li>
   </ul>
   <ul class="right_nav">
     <li *ngIf="isLogin"><!-- <a href="#" class="fas fa-user"></a> -->
@@ -62,8 +62,8 @@
               <!--<i class="fas fa-times-circle"></i></span></li>-->
               <!--</ng-container>-->
               <!--
-              <li><a href="#">파스타 공지사항</a><span><i class="fas fa-times-circle"></i></span></li>
-              <li><a href="#">파스타 공지사항</a><span><i class="fas fa-times-circle"></i></span></li>
+              <li><a href="#">공지사항</a><span><i class="fas fa-times-circle"></i></span></li>
+              <li><a href="#">공지사항</a><span><i class="fas fa-times-circle"></i></span></li>
               -->
             </ul>
           </div>
