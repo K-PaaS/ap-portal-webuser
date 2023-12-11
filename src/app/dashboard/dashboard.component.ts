@@ -385,7 +385,7 @@ export class DashboardComponent implements OnInit,  AfterViewChecked{
       this.thumnailApp();
       this.servicesEntities = data.services;
       this.servicesEntities.forEach(service => {
-        service['binding'] = false;
+	 service['binding'] = false;
       })
       this.thumnail();
     }, () => {
@@ -403,7 +403,8 @@ export class DashboardComponent implements OnInit,  AfterViewChecked{
       $.each(this.servicesEntities, function (skey, servicesEntitie) {
         let cnt = 0;
         $.each(data['list'], function (dkey, servicepack) {
-          let serviceOfferingName;
+	  let serviceOfferingName;
+	  if (servicesEntitie['type'] === "managed_service_instance"){
           serviceOfferingName = servicesEntitie['service_plan']['service']['label'];
           if (serviceOfferingName != null) {
             if (serviceOfferingName === servicepack['servicePackName']) {
@@ -427,7 +428,8 @@ export class DashboardComponent implements OnInit,  AfterViewChecked{
                 servicesEntitie['thumbImgPath'] = '../../assets/resources/images/catalog/catalog_3.png';
               }
             }
-          }
+	   }
+	  }
         })
         if (cnt == 0) {
           servicesEntitie['thumbImgPath'] = '../../assets/resources/images/catalog/catalog_3.png';
